@@ -1,26 +1,32 @@
-print("1- Add")
-print("2- Subtract")
-print("3- Multiply")
-print("4- Divide")
-option = int(input("Choose an operater:"))
+a=int(input("Enter Digit 1: "))
+b=int(input("Enter Digit 2: "))
+op=input("Enter the operater: ")
 
+match op:
+   case '+':
+      print("The Result is: ")
+      print(a+b)
+   case '-':
+      print("The Result is: ")
+      print(a-b)
 
-if(option in  [1,2,3,4]):
-   num1 = int(input("Enter Digit 1: "))
-   num2 = int(input("Enter Digit 2: "))
+   case '*':
+      print("The Result is: ")
+      print(a*b)
 
-   if(option == 1):
-       result = num1 + num2
+   case '/':
+      if b!=0:
+         print("The Result is: ")
+         print(a/b)
+      else:
+         print("Error! Division by zero")
 
-   elif(option == 2):
-       result = num1 - num2
+   case '%':
+      if b!=0:
+         print("The Result is: ")
+         print(a%b)
+      else:
+         print("Error! Division by zero")
 
-   elif(option == 3):
-        result = num1 * num2
-
-   elif(option == 4):
-        result = num1 / num2
-else:
-     print("Invalid operater entered")
-
-print("The result is ",format(result))     
+   case _:
+      print("invalid operator")
